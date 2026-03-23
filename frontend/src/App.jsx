@@ -43,7 +43,7 @@ const App = () => {
     setResult(null);
 
     try {
-      const response = await axios.post('http://localhost:8000/predict', {
+      const response = await axios.post('https://mifd-production.up.railway.app/predict', {
         age: parseInt(formData.age),
         gender: formData.gender,
         claim_amount: parseFloat(formData.claim_amount),
