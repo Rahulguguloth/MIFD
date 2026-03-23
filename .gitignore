@@ -1,0 +1,21 @@
+# Node modules
+node_modules/
+dist/
+.vite/
+
+# Python caching
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Large Model files (Consider if user wants to keep the .pkl file in repo, Railway needs it, so we'll KEEP it for now but note that it's 1.8MB)
+!fraud_detection_model.pkl

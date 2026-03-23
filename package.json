@@ -1,0 +1,11 @@
+{
+  "name": "mifd-root",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "frontend": "cd frontend && npm run dev",
+    "backend": "cd backend && python main.py",
+    "dev": "npm run frontend",
+    "start": "npm run frontend"
+  }
+}

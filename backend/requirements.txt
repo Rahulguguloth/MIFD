@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+joblib
+pandas
+xgboost
+scikit-learn
+pydantic
+python-multipart
+# Add any other specific model dependencies here if needed
