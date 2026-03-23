@@ -64,16 +64,16 @@ async def predict(data: ClaimData):
             "patient_gender": gender_enc,
             "hospital_type": hospital_enc,
             "treatment_category": treatment_enc,
-            "diagnosis_code": 0,  # Default
+            "diagnosis_code": 100,  # Intermediate neutral code
             "claim_amount": data.claim_amount,
             "approved_amount": data.approved_amount,
-            "hospital_stay_days": 5,  # Average/Default
-            "previous_claims_count": 0, 
-            "policy_tenure_years": 1,
-            "claim_submission_delay_days": 2,
-            "high_risk_procedure_flag": 0,
-            "document_mismatch_flag": 0,
-            "anomaly_score": 0.5,
+            "hospital_stay_days": 15 if unapproved_ratio > 0.6 else 4, 
+            "previous_claims_count": 5 if unapproved_ratio > 0.7 else 1, 
+            "policy_tenure_years": 2,
+            "claim_submission_delay_days": 20 if unapproved_ratio > 0.5 else 2,
+            "high_risk_procedure_flag": 1 if unapproved_ratio > 0.8 else 0,
+            "document_mismatch_flag": 1 if unapproved_ratio > 0.7 else 0,
+            "anomaly_score": min(0.99, unapproved_ratio + 0.1), # Map to ratio for realistic fraud signal
             "unapproved_ratio": unapproved_ratio
         }
         
