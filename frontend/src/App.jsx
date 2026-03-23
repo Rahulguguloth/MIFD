@@ -61,12 +61,12 @@ const App = () => {
 
   const trySampleData = () => {
     setFormData({
-      age: 45,
+      age: 78,
       gender: 'Male',
-      claim_amount: 500000,
-      approved_amount: 50000,
+      claim_amount: 800000,
+      approved_amount: 12000,
       hospital_type: 'Private',
-      treatment_category: 'Emergency'
+      treatment_category: 'Surgery'
     });
   };
 
